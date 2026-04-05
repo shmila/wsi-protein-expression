@@ -1,0 +1,2 @@
+# Git LFS tracking for large data files
+data/2projects[[:space:]]combined-proteinGroups-genes.csv filter=lfs diff=lfs merge=lfs -text

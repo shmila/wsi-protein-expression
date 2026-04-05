@@ -1,0 +1,17 @@
+torch
+torchvision
+pandas
+numpy
+scipy
+scikit-learn
+matplotlib
+seaborn
+plotly
+dash
+dash-bootstrap-components
+opencv-python
+openslide-python
+openslide-bin
+Pillow
+tqdm
+openpyxl
