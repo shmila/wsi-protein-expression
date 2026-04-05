@@ -1,29 +1,29 @@
 """
 Centralized path configuration for the WSI Protein Expression pipeline.
 
-Set the THESIS_DATA_DIR environment variable to point to your local data directory,
-or modify DEFAULT_DATA_DIR below.
+Proteomics CSVs are included in the repository under data/.
+WSI TIFFs and generated tile datasets are stored externally — set the
+THESIS_DATA_DIR environment variable or modify DEFAULT_DATA_DIR below
+to point to the directory containing the WSI files.
 
-Expected directory structure under DATA_DIR:
+Expected external directory structure:
     DATA_DIR/
     ├── 2021-01-17/
     │   └── Tiffs/           # Whole-slide images (per patient)
-    ├── CSVs/                # Proteomics data and analysis outputs
-    │   ├── 2projects combined-proteinGroups-genes.xlsx
-    │   ├── 2projects combined labels.xlsx
-    │   ├── SlidesZohar.xlsx
-    │   ├── relevant_dataframes_per_norm_type/
-    │   ├── top_20_proteins_per_norm_type/
-    │   └── protein_analysis_csvs_dir/
     └── dataset/             # Generated tile datasets (created by the pipeline)
 """
 
 from pathlib import Path
 import os
 
-DEFAULT_DATA_DIR = r"C:\Users\elira\ShmilaJustSolveIt Dropbox\Eliran Shmila\PC\Documents\Thesis"
+# Root of this repository
+REPO_DIR = Path(__file__).resolve().parent
 
+# Proteomics CSVs shipped with the repo
+CSVS_DIR = REPO_DIR / "data"
+
+# External data (WSIs and generated datasets) — configure this
+DEFAULT_DATA_DIR = r"C:\Users\elira\ShmilaJustSolveIt Dropbox\Eliran Shmila\PC\Documents\Thesis"
 DATA_DIR = Path(os.environ.get("THESIS_DATA_DIR", DEFAULT_DATA_DIR))
 TIFFS_DIR = DATA_DIR / "2021-01-17" / "Tiffs"
-CSVS_DIR = DATA_DIR / "CSVs"
 DATASET_DIR = DATA_DIR / "dataset"

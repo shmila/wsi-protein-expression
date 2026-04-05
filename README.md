@@ -12,7 +12,7 @@ This repository contains the code and data for investigating whether morphologic
 - **Filtered cohort**: 16 patients with ≥3 valid Lysis measurements across biopsy positions
 - **Proteomics**: Bulk LC-MS/MS measurements per biopsy position under three normalization types (Intensity, iBAQ, LFQ)
 
-WSI TIFF files are not included in this repository due to size. Set the `THESIS_DATA_DIR` environment variable or edit `config.py` to point to your local data directory containing the WSIs.
+Proteomics CSV data is included in the repository under `data/`. WSI TIFF files are not included due to size — set the `THESIS_DATA_DIR` environment variable or edit `config.py` to point to your local directory containing the WSIs.
 
 ## Pipeline
 
@@ -67,9 +67,10 @@ WSI TIFFs → Tissue Detection & Tiling → Stable Protein Selection (CV analysi
    ```
    pip install -r requirements.txt
    ```
-3. Configure data paths — either:
-   - Set the `THESIS_DATA_DIR` environment variable to point to your data directory, or
+3. Configure WSI data path (only needed for tiling/training/heatmap generation):
+   - Set the `THESIS_DATA_DIR` environment variable to point to the directory containing the WSI TIFFs, or
    - Edit `DEFAULT_DATA_DIR` in `config.py`
+   - Proteomics CSVs are already included in `data/` — no additional setup needed for analysis scripts
 
 ## Key Results
 
