@@ -148,8 +148,8 @@ if __name__ == '__main__':
     # protein_name = "Thioredoxin"
     protein_name = "UV excision repair protein RAD23 homolog B"
 
-    csv_dir = "CSVs"
-    proteomics_df = pd.read_excel(join(csv_dir, '2projects combined-proteinGroups-genes.xlsx'))
+    from config import CSVS_DIR
+    proteomics_df = pd.read_excel(join(str(CSVS_DIR), '2projects combined-proteinGroups-genes.xlsx'))
 
     # Get protein row once:
     protein_row = get_protein_row(protein_name, proteomics_df)
